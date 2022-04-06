@@ -1,10 +1,8 @@
 <?php
 
 session_start();
-include "source/Config.php";
-include "source/Helpers.php";
-require "autoload.php";
 
+require "autoload.php";
 
 use Source\Router;
 
@@ -13,7 +11,7 @@ $router = new Router();
 /**
  * Web
  */
-$router->get("/",  "Web:login");
+$router->get("/",  "App:home");
 
 
 // /**

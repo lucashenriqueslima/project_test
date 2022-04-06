@@ -8,7 +8,6 @@
     public function __construct()
     {
         $this->template = views("/_web_template");
-
     }
 
     public function login()
@@ -16,7 +15,6 @@
         // parent::render("/login", [
         //     "title" => site('name')."Bem-Vindo",
         // ]);
-        echo "asdasdadsad";
     }
 
 }

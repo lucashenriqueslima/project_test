@@ -1,5 +1,8 @@
 <?php
     
+    include "source/Config.php";
+    include "source/Helpers.php";
+
     spl_autoload_register(
         function($class){
             $class = str_replace("Source\\", "/", $class);
