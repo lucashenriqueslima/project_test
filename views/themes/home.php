@@ -1,7 +1,7 @@
-	<div class="container m-5">
+	<div class="container mt-5">
 		<div class="card">
 			<div class="card-header"><i class="fas fa-book mr-1"></i> <strong> Lista de Usuários </strong> <a
-					href="add-tipo-produtos.php" class="float-right btn btn-dark btn-sm"><i
+					href="add" class="float-right btn btn-dark btn-sm"><i
 						class="fas fa-user-plus mr-1"></i> Adicionar Usuário </a></div>
 			<div class="card-body pb-5">
 				<div class="col-sm-12">
@@ -25,27 +25,28 @@
 	</div>
 
 	<div>
-		<table class="table table-striped table-bordered">
+		<table class="table table-dark table-striped table-bordered text-center">
 			<thead>
-				<tr class="bg-primary text-white">
+				<tr class="bg-info text-white">
 					<th>ID</th>
-					<th>Descrição</th>
-					<th>Quantidade</th>
+					<th>Nome</th>
+					<th>Email</th>
 					<th class="text-center">Ação</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php 
-						foreach($tipo_produtos as $product):
+						foreach($clients as $client):
 					?>
 				<tr>
-					<td><?=$product[0]?></td>
-					<td><a href="list-produtos.php?search=<?=$product[1]?>"><?=$product[1]?></a></td>
-					<td><?=$product[2]?></td>
-					<td align="center">
-						<a href="edit-tipo-produtos.php?id_tipo_produto=<?=$product[0]?>" class="text-primary"><i
+					<td><?=$client["id_client"]?></td>
+					<td><?=$client["name"]?></td>
+					<td><?=$client["email"]?></td>
+					<td>
+					<a href="edit-tipo-produtos.php?id_tipo_produto=<?=$client["id_client"]?>" class="text-info"><i
+								class="fa fa-fw fa-eye"></i> Ver</a> | <a href="edit-tipo-produtos.php?id_tipo_produto=<?=$client["id_client"]?>" class="text-primary"><i
 								class="fa fa-fw fa-edit"></i> Editar</a> |
-						<a href="delete.php?id_tipo_produto=<?=$product[0]?>" class="text-danger"
+						<a href="delete.php?id_tipo_produto=<?=$client["id_client"]?>" class="text-danger"
 							onClick="return confirm('Você tem certeza disso? Todos itens associados também serão apagados!');"><i
 								class="fa fa-fw fa-trash"></i> Deletar</a>
 					</td>
@@ -53,10 +54,10 @@
 				</tr>
 				<?php 
 						endforeach;
-					if(empty($product)):
+					if(empty($clients)):
 					?>
 				<tr>
-					<td colspan="6" align="center">Sem dados registrados!</td>
+					<td class="text-center" colspan="6">Nenhum Cliente Cadastrado!</td>
 				</tr>
 				<?php endif; ?>
 			</tbody>

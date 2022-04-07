@@ -9,10 +9,10 @@ use Source\Router;
 $router = new Router();
 
 /**
- * Web
+ * App
  */
 $router->get("/",  "App:home");
-
+$router->get("/add", "App:add");
 
 // /**
 //  * Auth Web
