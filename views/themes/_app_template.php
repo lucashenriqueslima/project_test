@@ -16,6 +16,12 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBincX7_BVK2jC9UEMhlgUgupPiZq2A1c&callback=initMap&v=weekly"
+      async
+    ></script>
+
+
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src=<?=asset("js/alert_config.js")?>></script>
 
@@ -32,7 +38,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?=route()?>">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="<?=route()?>">Adicionar Cliente</a>
         </li>
       </ul>
     </div>
@@ -43,6 +52,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+    <?=flash()?>
 </body>
 
 </html>

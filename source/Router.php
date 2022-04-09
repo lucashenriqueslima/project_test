@@ -16,7 +16,7 @@
          */
         public function get(string $path, $handler): void
         {   
-            $path = "/project_teste".$path;
+            $path = "/project_test".$path;
             $this->addHandler(self::METHOD_GET, $path, $handler);
         }
         
@@ -25,7 +25,7 @@
          */
         public function post(string $path, $handler): void
         {
-            $path = "/project_teste".$path;
+            $path = "/project_test".$path;
             $this->addHandler(self::METHOD_POST, $path, $handler);
         }
         
@@ -63,6 +63,8 @@
 
             $callback = null;
 
+            echo $callback;
+
             foreach($this->handlers as $handler)
             {
                 /**
@@ -97,7 +99,6 @@
                 }
             }
 
-           
             
             call_user_func_array($callback, [
                 array_merge($_GET, $_POST)

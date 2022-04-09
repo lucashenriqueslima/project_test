@@ -2,7 +2,7 @@
 
     namespace Source\Controllers;
 
-use Source\Models\Clients;
+    use Source\Models\Clients;
 
     class App extends Controller
     {
@@ -28,6 +28,16 @@ use Source\Models\Clients;
         {
             parent::render("/add", [
                 "title" => site('name')."Adicionar Cliente",
+            ]);
+        }
+
+        public function update()
+        {
+            $client = (new Clients())->getClientById($_GET['id_client']);
+            
+            parent::render("/update", [
+                "title" => site('name')."Editar Cliente",
+                "client" => $client,
             ]);
         }
 

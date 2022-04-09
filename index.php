@@ -12,7 +12,13 @@ $router = new Router();
  * App
  */
 $router->get("/",  "App:home");
-$router->get("/add", "App:add");
+$router->get("/adicionar-cliente", "App:add");
+$router->get("/editar-cliente", "App:update");
+
+/**
+ * Req
+ */
+$router->post("/req/add_client", "Req:add_client");
 
 // /**
 //  * Auth Web

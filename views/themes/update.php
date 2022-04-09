@@ -11,7 +11,7 @@
                         <div class="form-group">
                             <label>Nome</label>
                             <input type="text" name="name" id="name" class="form-control"
-                                placeholder="Nome do Cliente" required>
+                                placeholder="Nome do Cliente" value="<?=$client["name"]?>" required>
                         </div>
                         <div class="form-group">
                             <label>CPF</label>
