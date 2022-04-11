@@ -53,6 +53,13 @@ function site(string $param = null): string
         return null;
     }
 
+    function activeMenu($itemMenu)
+    {
+        if ($itemMenu){
+            echo "active";
+        }
+    }
+
     function scriptJs($script)
     {
         return "<script> ".$script." </script>";

@@ -4,7 +4,7 @@
 
 define("SITE",[
 "name"=>"CRUD | ",
-"root"=>"http://localhost:888/project_test",
+"root"=>"http://localhost/project_test",
 "route"=>"Source\Controllers\\"
 
 ]);
@@ -16,5 +16,5 @@ define("DATABASE", [
     "port"=>"3306",
     "name"=>"crud-php",
     "username"=>"root",
-    "passwd"=>"Banana123432",
+    "passwd"=>"",
 ]);

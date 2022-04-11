@@ -24,4 +24,24 @@
             (NULL, '{$data['name']}', '{$data['cpf']}', '{$data['cell_number']}', '{$data['cep']}', '{$data['street_number']}', '{$data['street']}', '{$data['neighborhood']}', '{$data['city']}')");
         }
 
+        public function updateClient(array $data, $id)
+        {
+            $this->pdo->exec("UPDATE clients SET 
+            name = '{$data['name']}',
+            cpf = '{$data['cpf']}',
+            cell_number = '{$data['cell_number']}',
+            cep = '{$data['cep']}',
+            street_number = '{$data['street_number']}',
+            street = '{$data['street']}',
+            neighborhood = '{$data['neighborhood']}',
+            city = '{$data['city']}'
+            WHERE id_client = {$id}");
+        }
+
+        public function deleteClient($id)
+        {
+            $this->pdo->exec("DELETE FROM clients WHERE id_client = {$id}");
+        }
+
+
     }
